@@ -16,8 +16,8 @@
              <div class="col-md-4 m-auto">
                 <div class="card">
                    <div class="card-header card-header-primary mb-48">
-                      <h4 class="card-title">Login petugas</h4>
-                      <p class="card-category">Silahkan masukkan username dan password anda</p>
+                      <h4 class="card-title">Login</h4>
+                      <p class="card-category">SMK CANDA BHIRAWA PARE</p>
                    </div>
 
                    <div class="card-body mx-5 my-3">
