@@ -125,6 +125,8 @@ protected function validateLocation($lat, $lon)
    $lokasiSekolah = [
       ['lat' => -7.7664369, 'lon' => 112.1910581], //sekolah
       ['lat' => -7.7671665, 'lon' => 112.2440093], //rumah
+      ['lat' => -7.526650004547431, 'lon' => 111.46002377779327],
+      ['lat' => -7.858365585297853, 'lon' => 112.26488287827247], //rumah
    ];
 
    foreach ($lokasiSekolah as $lokasi) {
