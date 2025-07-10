@@ -114,11 +114,11 @@ Aplikasi Web Sistem Absensi Sekolah Berbasis QR Code adalah sebuah proyek yang b
 - Jalankan migrasi database untuk membuat struktur tabel yang diperlukan. Ketikkan perintah berikut di terminal:
 
   ```shell
-  php spark migrate --all
+  php presensi migrate --all
   ```
 
 - Jalankan web server (contoh Apache, XAMPP, etc)
-- Atau gunakan `php spark serve` (atur baseURL di `.env` menjadi `http://localhost:8080/` terlebih dahulu).
+- Atau gunakan `php presensi serve` (atur baseURL di `.env` menjadi `http://localhost:8080/` terlebih dahulu).
 - Lalu jalankan aplikasi di browser.
 - Login menggunakan krendensial superadmin:
 
