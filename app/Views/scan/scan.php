@@ -1,43 +1,43 @@
- <?= $this->extend('templates/starting_page_layout'); ?>
+<?= $this->extend('templates/starting_page_layout'); ?>
 
- <?= $this->section('navaction') ?>
- <a href="<?= base_url('/admin'); ?> " class="btn btn-primary pull-right pl-3">
-    <i class="material-icons mr-2">dashboard</i>
-    Dashboard
- </a>
- <?= $this->endSection() ?>
+<?= $this->section('navaction') ?>
+<a href="<?= base_url('/admin'); ?> " class="btn btn-primary pull-right pl-3">
+   <i class="material-icons mr-2">dashboard</i>
+   Dashboard
+</a>
+<?= $this->endSection() ?>
 
- <?= $this->section('content'); ?>
- <?php
+<?= $this->section('content'); ?>
+<?php
    $oppBtn = '';
 
    $waktu == 'Masuk' ? $oppBtn = 'pulang' : $oppBtn = 'masuk';
    ?>
- <div class="main-panel">
-    <div class="content">
-       <div class="container-fluid">
-          <div class="row mx-auto">
-             <div class="col-lg-3 col-xl-4">
-                <div class="card">
-                   <div class="card-body">
-                      <h3 class="mt-2"><b>Tips</b></h3>
-                      <ul class="pl-3">
-                         <li>Tunjukkan qr code sampai terlihat jelas di kamera</li>
-                         <li>Posisikan qr code tidak terlalu jauh maupun terlalu dekat</li>
-                      </ul>
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-6 col-xl-4">
-                <div class="card">
-                   <div class="col-10 mx-auto card-header card-header-primary">
-                      <div class="row">
-                         <div class="col">
-                            <h4 class="card-title"><b>Absen <?= $waktu; ?></b></h4>
-                            <p class="card-category">Silahkan tunjukkan QR Code anda</p>
-                         </div>
-                         
-                         <div class="col-md-auto">
+<div class="main-panel">
+   <div class="content">
+      <div class="container-fluid">
+         <div class="row mx-auto">
+            <div class="col-lg-3 col-xl-4">
+               <div class="card">
+                  <div class="card-body">
+                     <h3 class="mt-2"><b>Tips</b></h3>
+                     <ul class="pl-3">
+                        <li>Tunjukkan qr code sampai terlihat jelas di kamera</li>
+                        <li>Posisikan qr code tidak terlalu jauh maupun terlalu dekat</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+               <div class="card">
+                  <div class="col-10 mx-auto card-header card-header-primary">
+                     <div class="row">
+                        <div class="col">
+                           <h4 class="card-title"><b>Absen <?= $waktu; ?></b></h4>
+                           <p class="card-category">Silahkan tunjukkan QR Code anda</p>
+                        </div>
+                        
+                        <div class="col-md-auto">
                               <div class="dropdown">
                            <?php
                                  $labelAbsen = 'Pilih Jenis Absen';
@@ -106,7 +106,7 @@
                          </div>
                       </div>
                       <div id="hasilScan"></div>
-                      <br>
+                      
                    </div>
                 </div>
              </div>
