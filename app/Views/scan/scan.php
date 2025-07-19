@@ -6,7 +6,7 @@
 <?= $this->extend('templates/starting_page_layout'); ?>
 
 <?= $this->section('navaction') ?>
-<a href="<?= base_url('/admin'); ?> " class="btn btn-primary pull-right pl-3">
+<a href="<?= base_url('/admin'); ?> " class="btn btn-info pull-right pl-3">
    <i class="material-icons mr-2">dashboard</i>
    Dashboard
 </a>
@@ -76,7 +76,7 @@
 
             <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
                <div class="card animate__animated animate__fadeInUp">
-                  <div class="col-11 mx-auto card-header card-header-primary">
+                  <div class="col-11 mx-auto card-header card-header-info">
                      <div class="row">
                         <div class="col">
                            <h4 class="card-title"><b>Absen <?= $waktu; ?></b></h4>
@@ -86,11 +86,11 @@
                            <div class="dropdown">
                            <?php
                               $labelAbsen = 'Pilih Jenis Absen';
-                              $btnColor = 'primary';
+                              $btnColor = 'info';
                               switch (strtolower($waktu)) {
                                  case 'masuk': $labelAbsen = 'Absen Masuk'; $btnColor = 'success'; break;
                                  case 'pulang': $labelAbsen = 'Absen Pulang'; $btnColor = 'warning'; break;
-                                 case 'izin': $labelAbsen = 'Absen Izin'; $btnColor = 'info'; break;
+                                 case 'izin': $labelAbsen = 'Absen Izin'; $btnColor = 'primary'; break;
                               }
                            ?>
                            </div>
@@ -106,7 +106,7 @@
                                  <a class="dropdown-item d-flex align-items-center text-warning" href="<?= base_url("scan/pulang"); ?>">
                                     <i class="material-icons mr-2">logout</i> Absen Pulang
                                  </a>
-                                 <a class="dropdown-item d-flex align-items-center text-info" href="<?= base_url("scan/izin"); ?>">
+                                 <a class="dropdown-item d-flex align-items-center text-primary" href="<?= base_url("scan/izin"); ?>">
                                     <i class="material-icons mr-2">event_busy</i> Absen Izin
                                  </a>
                               </div>
@@ -137,7 +137,7 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-3 col-xl-4 mb-4">
-               <div class="card bg-gradient bg-success text-white shadow rounded-lg">
+               <div class="card bg-gradient bg-info text-white shadow rounded-lg">
                   <br>
                   <div class="col-12 text-center mb-2">
                      <h2 id="clock" class="font-weight-bold text-white"></h2>
@@ -149,7 +149,7 @@
                      <ul class="pl-3">
                         <li>Jika berhasil scan maka akan muncul data siswa/guru dibawah preview kamera</li>
                         <li>Klik tombol <b><span class="text-success">Absen masuk</span> / <span class="text-warning">Absen pulang</span></b> untuk mengubah waktu absensi</li>
-                        <li>Untuk melihat data absensi, klik tombol <span class="text-primary"><i class="material-icons" style="font-size: 16px;">dashboard</i> Dashboard Petugas</span></li>
+                        <li>Untuk melihat data absensi, klik tombol <span class="text-info"><i class="material-icons" style="font-size: 16px;">dashboard</i> Dashboard Petugas</span></li>
                         <li>Untuk mengakses halaman petugas anda harus login terlebih dahulu</li>
                      </ul>
                   </div>

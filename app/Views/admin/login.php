@@ -1,7 +1,7 @@
 <?= $this->extend('templates/starting_page_layout'); ?>
 
 <?= $this->section('navaction') ?>
-<a href="<?= base_url('/'); ?>" class="btn btn-primary pull-right pl-3">
+<a href="<?= base_url('/'); ?>" class="btn btn-info pull-right pl-3">
    <i class="material-icons mr-2">qr_code</i>
    Scan QR
 </a>
@@ -14,7 +14,7 @@
          <div class="row justify-content-center">
             <div class="col-md-4"> <!-- Ubah dari col-md-6 ke col-md-4 -->
                <div class="card shadow-lg rounded-lg border-0 animate__animated animate__fadeInDown">
-                  <div class="card-header bg-gradient-primary text-white text-center py-4">
+                  <div class="card-header bg-gradient-info text-white text-center py-4">
                      <!-- Logo SMK -->
                      <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Logo SMK" class="mb-2" style="max-height: 80px;">
                      <h4 class="card-title font-weight-bold">Login</h4>
@@ -61,7 +61,7 @@
                         </div>
                         <?php endif; ?>
 
-                        <button type="submit" class="btn btn-primary btn-block mt-4">
+                        <button type="submit" class="btn btn-info btn-block mt-4">
                            <i class="material-icons mr-1">login</i> <?= lang('Auth.loginAction') ?>
                         </button>
 

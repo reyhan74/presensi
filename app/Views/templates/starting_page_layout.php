@@ -8,6 +8,13 @@
    <?= $this->include('templates/css'); ?>
    <title>Absensi QR Code</title>
    <style>
+      
+      :root {
+         --bs-primary: #ff5733; /* ganti dengan warna yang kamu mau */
+      }
+      
+
+
       .bg {
          background: url(<?= base_url('assets/img/bg2.jpg'); ?>) center;
          opacity: 0.1;
