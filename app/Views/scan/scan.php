@@ -7,8 +7,8 @@
 
 <?= $this->section('navaction') ?>
 <a href="<?= base_url('/admin'); ?> " class="btn btn-info pull-right pl-3">
-   <i class="material-icons mr-2">dashboard</i>
-   Dashboard
+   <i class="material-icons mr-2">BERANDA</i>
+   BERANDA
 </a>
 <?= $this->endSection() ?>
 
