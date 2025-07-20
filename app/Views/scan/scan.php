@@ -1,12 +1,10 @@
-<?php
+<?php // view file: scan_absen.php ?>
 
-// view file: scan_absen.php (misal)
-
-?>
 <?= $this->extend('templates/starting_page_layout'); ?>
 
 <?= $this->section('navaction') ?>
-<a href="<?= base_url('/admin'); ?> " class="btn btn-info pull-right pl-3">
+<!-- Tombol Dashboard hanya tampil di layar >= md -->
+<a href="<?= base_url('/admin'); ?>" class="btn btn-info d-none d-md-inline-flex align-items-center">
    <i class="material-icons mr-2">dashboard</i>
    Dashboard
 </a>
@@ -136,10 +134,23 @@
                </div>
             </div>
 
+            <!-- Tombol Dashboard versi Mobile, sticky di bawah -->
+<div class="container-fluid d-block d-md-none fixed-bottom mb-3">
+   <div class="row justify-content-center">
+      <div class="col-10">
+         <a href="<?= base_url('/admin'); ?>" class="btn btn-info btn-block btn-lg shadow rounded-pill text-white d-flex justify-content-center align-items-center">
+            <i class="material-icons mr-2">dashboard</i>
+            Dashboard
+         </a>
+      </div>
+   </div>
+</div>
+
             <div class="col-12 col-md-6 col-lg-3 col-xl-4 mb-4">
                <div class="card bg-gradient bg-info text-white shadow rounded-lg">
                   <br>
                   <div class="col-12 text-center mb-2">
+                     <h5 id="tanggal" class="text-white font-weight-bold mb-1"></h5>
                      <h2 id="clock" class="font-weight-bold text-white"></h2>
                   </div>
                </div>
@@ -240,14 +251,32 @@ function cekData(code) {
 
 function updateClock() {
    const now = new Date();
+
+   const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+   const months = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+   ];
+
+   const day = days[now.getDay()];
+   const date = now.getDate();
+   const month = months[now.getMonth()];
+   const year = now.getFullYear();
+
    const hours = String(now.getHours()).padStart(2, '0');
    const minutes = String(now.getMinutes()).padStart(2, '0');
    const seconds = String(now.getSeconds()).padStart(2, '0');
+
    const timeString = `${hours}:${minutes}:${seconds}`;
+   const dateString = `${day}, ${date} ${month} ${year}`;
+
    document.getElementById('clock').innerText = timeString;
+   document.getElementById('tanggal').innerText = dateString;
 }
+
 setInterval(updateClock, 1000);
 updateClock();
+
 </script>
 
 

@@ -8,14 +8,8 @@
    <?= $this->include('templates/css'); ?>
    <title>Absensi QR Code</title>
    <style>
-      
-      :root {
-         --bs-primary: #ff5733; /* ganti dengan warna yang kamu mau */
-      }
-      
 
-
-      .bg {
+      bg {
          background: url(<?= base_url('assets/img/bg2.jpg'); ?>) center;
          opacity: 0.1;
          background-size: cover;
@@ -61,18 +55,22 @@
 <body>
    <div class="bg bg-image"></div>
    <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
       <div class="container-fluid">
-         <div class="navbar-wrapper row w-100">
-            <div class="col-6">
-               <p class="navbar-brand"><b><?= $title ?? 'Login'; ?></b></p>
+         <div class="row w-100 align-items-center">
+            <!-- Judul -->
+            <div class="col-12 col-md-6 order-1 order-md-1 text-start">
+               <p class="navbar-brand mb-0 mt-2 mt-md-0"><b><?= $title ?? 'Login'; ?></b></p>
             </div>
-            <div class="col-6 d-flex justify-content-end">
+
+            <!-- Tombol Dashboard -->
+            <div class="col-12 col-md-6 order-2 order-md-2 d-flex justify-content-start justify-content-md-end mt-2 mt-md-0">
                <?= $this->renderSection('navaction') ?>
             </div>
          </div>
       </div>
    </nav>
+
    <!-- End Navbar -->
    <?= $this->renderSection('content') ?>
    <?= $this->include('templates/js'); ?>
