@@ -8,21 +8,10 @@
    <?= $this->include('templates/css'); ?>
    <title>Absensi QR Code</title>
    <style>
-<<<<<<< HEAD
-      
-      :root {
-         --bs-primary: #ff5733; /* ganti dengan warna yang kamu mau */
-      }
-      
-=======
-      .main-panel .content {
-         margin-top: 0 !important;
-         padding-top: 0 !important;
-      }
->>>>>>> 7db1fe3 (halaman scan)
 
 
-      .bg {
+
+      /* .bg {
          background: url(<?= base_url('assets/img/bg2.jpg'); ?>) center;
          opacity: 0.1;
          background-size: cover;
@@ -32,7 +21,7 @@
          left: 0;
          top: 0;
          z-index: -1;
-      }
+      } */
 
       .main-panel {
          position: relative;
