@@ -1,12 +1,14 @@
-<?php // view file: scan_absen.php ?>
+<?php
 
+// view file: scan_absen.php (misal)
+
+?>
 <?= $this->extend('templates/starting_page_layout'); ?>
 
 <?= $this->section('navaction') ?>
-<!-- Tombol Dashboard hanya tampil di layar >= md -->
-<a href="<?= base_url('/admin'); ?>" class="btn btn-info d-none d-md-inline-flex align-items-center">
-   <i class="material-icons mr-2">dashboard</i>
-   Dashboard
+<a href="<?= base_url('/admin'); ?> " class="btn btn-info pull-right pl-3">
+   <i class="material-icons mr-2">BERANDA</i>
+   BERANDA
 </a>
 <?= $this->endSection() ?>
 
@@ -134,18 +136,6 @@
                </div>
             </div>
 
-            <!-- Tombol Dashboard versi Mobile, sticky di bawah -->
-<div class="container-fluid d-block d-md-none fixed-bottom mb-3">
-   <div class="row justify-content-center">
-      <div class="col-10">
-         <a href="<?= base_url('/admin'); ?>" class="btn btn-info btn-block btn-lg shadow rounded-pill text-white d-flex justify-content-center align-items-center">
-            <i class="material-icons mr-2">dashboard</i>
-            Dashboard
-         </a>
-      </div>
-   </div>
-</div>
-
             <div class="col-12 col-md-6 col-lg-3 col-xl-4 mb-4">
                <div class="card bg-gradient bg-info text-white shadow rounded-lg">
                   <br>
@@ -248,7 +238,6 @@ function cekData(code) {
       });
    }, error => alert("Gagal mendapatkan lokasi: " + error.message));
 }
-
 function updateClock() {
    const now = new Date();
 
