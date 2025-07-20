@@ -59,7 +59,7 @@
 </style>
 
 <div class="main-panel">
-   <div class="content">
+   <div >
       <div class="container-fluid">
          <div class="row">
             <div class="col-12 col-md-6 col-lg-3 col-xl-4 mb-4">
