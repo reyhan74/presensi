@@ -72,6 +72,17 @@
                      </ul>
                   </div>
                </div>
+               <div class="card animate__animated animate__fadeInUp">
+                  <div class="card-body">
+                     <h3 class="mt-2"><b>Penggunaan</b></h3>
+                     <ul class="pl-3">
+                        <li>Jika berhasil scan maka akan muncul data siswa/guru dibawah preview kamera</li>
+                        <li>Klik tombol <b><span class="text-success">Absen masuk</span> / <span class="text-warning">Absen pulang</span></b> untuk mengubah waktu absensi</li>
+                        <li>Untuk melihat data absensi, klik tombol <span class="text-primary"><i class="material-icons" style="font-size: 16px;">dashboard</i> Dashboard Petugas</span></li>
+                        <li>Untuk mengakses halaman petugas anda harus login terlebih dahulu</li>
+                     </ul>
+                  </div>
+               </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
@@ -140,18 +151,20 @@
                <div class="card bg-gradient bg-success text-white shadow rounded-lg">
                   <br>
                   <div class="col-12 text-center mb-2">
+                     <h4 id="tanggal" class="font-weight-bold text-white"></h4>
                      <h2 id="clock" class="font-weight-bold text-white"></h2>
                   </div>
                </div>
                <div class="card animate__animated animate__fadeInUp">
-                  <div class="card-body">
-                     <h3 class="mt-2"><b>Penggunaan</b></h3>
-                     <ul class="pl-3">
-                        <li>Jika berhasil scan maka akan muncul data siswa/guru dibawah preview kamera</li>
-                        <li>Klik tombol <b><span class="text-success">Absen masuk</span> / <span class="text-warning">Absen pulang</span></b> untuk mengubah waktu absensi</li>
-                        <li>Untuk melihat data absensi, klik tombol <span class="text-primary"><i class="material-icons" style="font-size: 16px;">dashboard</i> Dashboard Petugas</span></li>
-                        <li>Untuk mengakses halaman petugas anda harus login terlebih dahulu</li>
-                     </ul>
+                  <div class="card-body text-center">
+                     <!-- Logo Sekolah -->
+                     <img src="<?= base_url('assets/img/logo_sekolah.png'); ?>" alt="Logo Sekolah" class="mb-3" style="width: 125px; height: auto;">
+
+                     <!-- Nama Sekolah -->
+                     <h4 class="mb-1">SMK CANDA BHIRAWA PARE</h4>
+
+                     <!-- Alamat Sekolah -->
+                     <p class="text-muted mb-0">Jl. Pb. Sudirman No.68, Plongko, Pare, Kec. Pare, Kabupaten Kediri</p>
                   </div>
                </div>
             </div>
@@ -240,12 +253,29 @@ function cekData(code) {
 
 function updateClock() {
    const now = new Date();
+
+   const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+   const months = [
+      "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+   ];
+
+   const day = days[now.getDay()];
+   const date = now.getDate();
+   const month = months[now.getMonth()];
+   const year = now.getFullYear();
+
    const hours = String(now.getHours()).padStart(2, '0');
    const minutes = String(now.getMinutes()).padStart(2, '0');
    const seconds = String(now.getSeconds()).padStart(2, '0');
+
    const timeString = `${hours}:${minutes}:${seconds}`;
+   const dateString = `${day}, ${date} ${month} ${year}`;
+
    document.getElementById('clock').innerText = timeString;
+   document.getElementById('tanggal').innerText = dateString;
 }
+
 setInterval(updateClock, 1000);
 updateClock();
 </script>

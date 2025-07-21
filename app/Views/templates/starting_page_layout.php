@@ -8,6 +8,25 @@
    <?= $this->include('templates/css'); ?>
    <title><?= $title ?? 'Absensi QR Code'; ?></title>
    <style>
+         body {
+      background: linear-gradient(to bottom right, #007BFF, #ffffff); /* biru ke putih */
+      min-height: 100vh;
+      background-attachment: fixed;
+   }
+
+   .main-panel {
+      position: relative;
+      width: 100%;
+      padding-top: 80px;
+      transition: 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+      z-index: 1;
+   }
+
+   /* Tambahan agar konten terlihat bagus */
+   .card {
+      background-color: white;
+      border-radius: 10px;
+   }
       .main-panel {
          position: relative;
          width: 100%;
