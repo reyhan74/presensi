@@ -141,6 +141,7 @@
                   </div>
                 </div>
               </div>
+              <?php if (user()->toArray()['is_superadmin '] ?? '0' == '1') : ?>
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-body">
@@ -199,6 +200,7 @@
                   File image QR Code tersimpan di [folder website]/public/uploads/
                 </p>
               </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>

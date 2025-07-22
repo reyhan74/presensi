@@ -26,9 +26,12 @@ switch ($context) {
 
         Tip 2: you can also add an image using data-image tag
     -->
-   <div class="logo">
-      <a class="simple-text logo-normal">
-         <b>Operator<br>Petugas Absensi</b>
+   <div class="logo text-center">
+      <a class="simple-text logo-normal d-block">
+         <!-- Logo Sekolah -->
+         <img src="<?= base_url('assets/img/logo_sekolah.png'); ?>" alt="Logo" style="width: 80px; height: auto; margin-bottom: 5px;">
+         <!-- Teks -->
+         <br>SMK CANDA BHIRAWA PARE</br>
       </a>
    </div>
    <div class="sidebar-wrapper">
@@ -45,18 +48,21 @@ switch ($context) {
                <p>Absensi Siswa</p>
             </a>
          </li>
+         <?php if (user()->toArray()['is_superadmin '] ?? '0' == '1') : ?>
          <li class="nav-item <?= $context == 'absen-guru' ? 'active' : ''; ?>">
             <a class="nav-link" href="<?= base_url('admin/absen-guru'); ?>">
                <i class="material-icons">checklist</i>
                <p>Absensi Guru</p>
             </a>
          </li>
+         <?php endif; ?>
          <li class="nav-item <?= $context == 'siswa' ? 'active' : ''; ?>">
             <a class="nav-link" href="<?= base_url('admin/siswa'); ?>">
                <i class="material-icons">person</i>
                <p>Data Siswa</p>
             </a>
          </li>
+         <?php if (user()->toArray()['is_superadmin'] ?? '0' == '1') : ?>
          <li class="nav-item <?= $context == 'guru' ? 'active' : ''; ?>">
             <a class="nav-link" href="<?= base_url('admin/guru'); ?>">
                <i class="material-icons">person_4</i>
@@ -69,6 +75,7 @@ switch ($context) {
                <p>Data Kelas & Jurusan</p>
             </a>
          </li>
+         <?php endif; ?>
          <li class="nav-item <?= $context == 'qr' ? 'active' : ''; ?>">
             <a class="nav-link" href="<?= base_url('admin/generate'); ?>">
                <i class="material-icons">qr_code</i>

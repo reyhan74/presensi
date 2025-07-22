@@ -95,6 +95,7 @@
                            </form>
                         </div>
                      </div>
+                     <?php if (user()->toArray()['is_superadmin '] ?? '0' == '1') : ?>
                      <div class="col-md-6">
                         <div class="card h-100">
                            <form action="<?= base_url('admin/laporan/guru'); ?>" method="post" class="card-body d-flex flex-column">
@@ -137,6 +138,7 @@
                            </form>
                         </div>
                      </div>
+                     <?php endif; ?>
                   </div>
                   <br><br>
                </div>
