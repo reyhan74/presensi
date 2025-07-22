@@ -48,7 +48,7 @@ switch ($context) {
                <p>Absensi Siswa</p>
             </a>
          </li>
-         <?php if (user()->toArray()['is_superadmin '] ?? '0' == '1') : ?>
+         <?php if (user()->toArray()['is_superadmin'] ?? '0' == '1') : ?>
          <li class="nav-item <?= $context == 'absen-guru' ? 'active' : ''; ?>">
             <a class="nav-link" href="<?= base_url('admin/absen-guru'); ?>">
                <i class="material-icons">checklist</i>
