@@ -6,10 +6,15 @@
 <?= $this->extend('templates/starting_page_layout'); ?>
 
 <?= $this->section('navaction') ?>
-<a href="<?= base_url('/admin'); ?> " class="btn btn-primary pull-right pl-3">
-   <i class="material-icons mr-2">dashboard</i>
-   Dashboard
-</a>
+<div class="dropdown pull-right">
+   <button class="btn btn-primary dropdown-toggle" type="button" id="loginDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="material-icons mr-2">login</i> Login
+   </button>
+   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="loginDropdown">
+      <li><a class="dropdown-item" href="<?= base_url('/admin'); ?>">Login Guru</a></li>
+      <li><a class="dropdown-item" href="<?= base_url('/siswa'); ?>">Login Siswa</a></li>
+   </ul>
+</div>
 <?= $this->endSection() ?>
 
 <?= $this->section('content'); ?>

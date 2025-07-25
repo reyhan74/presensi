@@ -18,14 +18,18 @@
                   <td><?= $value['is_superadmin'] == '1' ? 'Super Admin' : 'Petugas'; ?></td>
                   <td>
                      <?php if ($value['username'] == 'superadmin') : ?>
-                        <button disabled class="btn btn-disabled p-2" id="<?= $value['username']; ?>">
+                        <a href="<?= base_url('admin/petugas/edit/' . $value['id']); ?>" type="button" class="btn btn-info p-2" id="<?= $value['username']; ?>">
                            <i class="material-icons">edit</i>
                            Edit
-                        </button>
-                        <button disabled class="btn btn-disabled p-2" id="<?= $value['username']; ?>">
-                           <i class="material-icons">delete_forever</i>
-                           Delete
-                        </button>
+                        </a>
+                        <form action="<?= base_url('admin/petugas/delete/' . $value['id']); ?>" method="post" class="d-inline">
+                           <?= csrf_field(); ?>
+                           <input type="hidden" name="_method" value="DELETE">
+                           <button onclick="return confirm('Konfirmasi untuk menghapus data');" type="submit" class="btn btn-danger p-2" id="<?= $value['username']; ?>">
+                              <i class="material-icons">delete_forever</i>
+                              Delete
+                           </button>
+                        </form>
                      <?php else : ?>
                         <a href="<?= base_url('admin/petugas/edit/' . $value['id']); ?>" type="button" class="btn btn-info p-2" id="<?= $value['username']; ?>">
                            <i class="material-icons">edit</i>
